@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 
 <html lang="fr">
@@ -8,7 +9,7 @@
     <link rel="stylesheet" href="css/livre-or.css">
 </head>
 
-<body class= "body_base">
+<body class="body_base">
 
     <header class="hetf">
         <nav>
@@ -42,6 +43,32 @@
             </ul>
         </nav>
     </header>
+
+    <main>
+
+        <section>
+
+            <form action="connexion.php" method="POST">
+
+                <article>
+                    <label> Login </label>
+                    <input type="text" name="login" required />
+                </article>
+
+                <article>
+                    <label> Mot de passe </label>
+                    <input type="password" name="password" required />
+                </article>
+
+                <input type="submit" name="connexion" value="connexion" />
+
+                <?php include 'verification.php' ?>
+
+            </form>
+
+        </section>
+
+    </main>
 
     <footer class="hetf">
         <nav>

@@ -1,7 +1,3 @@
-html {
-    
-}
-
 .body_base {
     margin: 0;
     display: flex;
@@ -14,7 +10,7 @@ html {
     background-attachment: fixed;
 }
 
-.body_livre{
+.body_livre {
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -22,7 +18,7 @@ html {
     height: 100vh;
     background-image: url('../img/livre.jpg');
     background-size: cover;
-    background-position:25% 50%;
+    background-position: 25% 50%;
     background-attachment: fixed;
 }
 
@@ -48,41 +44,70 @@ a {
     color: rgb(122, 76, 43);
 }
 
-a:hover{
+a:hover {
     text-shadow: 1px 2px 2px rgb(122, 76, 43);
 }
 
 main {
     display: flex;
     justify-content: center;
-    font-size: 30pt;
+    flex-grow:1;
 }
 
 section {
     display: flex;
     flex-direction: column;
-    align-items: center
+    justify-content: center;
+    align-items: center;
+    font-size: 22pt;
+    flex-grow:1;
 }
 
-footer nav{
+section form {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    flex-grow:0.7;
+    width:50%;
+    justify-content: space-around;
+    background-color:rgba(236, 196, 162, 0.7);
+    border-radius:30px 30px 30px 30px;
+    border-color:rgba(236, 196, 162);
+}
+
+form article{
     display:flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.warning{
+    color:red;
+    font-weight:bold;
+}
+
+footer nav {
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items:center;
+    align-items: center;
     color: rgb(122, 76, 43);
 }
-footer aside{
-    font-weight: bold; 
+
+footer aside {
+    font-weight: bold;
 }
 
-nav input[type=submit]{
-    border:none;
-    background:none;
-    font-size:15pt;
+nav input[type=submit] { 
+    border: none;
+    background: transparent;
+    font-size: 15pt;
     letter-spacing: 3px;
-    color:rgb(122, 76, 43);
+    color: rgb(122, 76, 43);
     font-weight: bold;
-    cursor:pointer;
+    cursor: pointer;
     text-decoration: underline;
-    outline:none;
+    outline: none;
 }
+ 
+     

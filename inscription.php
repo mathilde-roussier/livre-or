@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 
 <html lang="fr">
@@ -8,7 +9,7 @@
     <link rel="stylesheet" href="css/livre-or.css">
 </head>
 
-<body class= "body_base">
+<body class="body_base">
 
     <header class="hetf">
         <nav>
@@ -30,8 +31,7 @@
                         <form action="index.php" method="post">
                             <input type="submit" name='deco' value="Deconnexion">
                         </form>
-                        <?php if (isset($_POST['deco'])) 
-                            {
+                        <?php if (isset($_POST['deco'])) {
                                 session_unset();
                                 session_destroy();
                                 header('Location:index.php');
@@ -43,6 +43,37 @@
             </ul>
         </nav>
     </header>
+
+    <main>
+
+        <section>
+
+            <form action="inscription.php" method="POST">
+
+                <article>
+                    <label> Login </label>
+                    <input type="text" name="login" required />
+                </article>
+
+                <article>
+                    <label> Mot de passe </label>
+                    <input type="password" name="password" required />
+                </article>
+
+                <article>
+                    <label> Confirmation de mot de passe </label>
+                    <input type="password" name="password_conf" required />
+                </article>
+
+                <input type="submit" name="inscription" value="inscription" />
+
+                <?php include 'verification.php' ?>
+
+            </form>
+
+        </section>
+
+    </main>
 
     <footer class="hetf">
         <nav>
@@ -63,8 +94,7 @@
                         <form action="index.php" method="post">
                             <input type="submit" name='deco' value="Deconnexion">
                         </form>
-                        <?php if (isset($_POST['deco'])) 
-                            {
+                        <?php if (isset($_POST['deco'])) {
                                 session_unset();
                                 session_destroy();
                                 header('Location:index.php');
