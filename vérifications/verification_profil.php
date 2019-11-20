@@ -1,53 +1,53 @@
 <!-- CODE profil -->
 
-<?php 
+<?php
 
-if (isset($_POST['profil'])) 
+$requete = "SELECT * FROM utilisateurs WHERE login = '" . $_SESSION['login'] . "'";
+$query = mysqli_query($connexion, $requete);
+$resultat = mysqli_fetch_assoc($query);
+
+if (isset($_POST['Modifier'])) 
 {
-    $login = $_POST["login"];
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+    $password_conf = $_POST['password_conf'];
+    $modif_log = false;
+    $modif_password = false;
+    $erreur_log = false;
+    $erreur_password = false;
 
-    if ($_POST['password'] == $resultat['password'])
+    if ($login != $resultat['login']) 
     {
-        $password = $resultat['password'];
-    }
-    else 
-    {
-        $password = password_hash($_POST["password"], PASSWORD_BCRYPT, array('cost' => 12));
+        $requete_verif = "SELECT login FROM utilisateurs WHERE login = '$login'";
+        $query_verif = mysqli_query($connexion, $requete_verif);
+        $resultat_verif = mysqli_fetch_assoc($query_verif);
 
-    }
-
-    $requete_verif = "SELECT id, login FROM utilisateurs WHERE login = '$login'";
-    $query_verif = mysqli_query($connexion,$requete_verif);
-    $resultat_verif = mysqli_fetch_assoc($query_verif);
-    // var_dump($resultat_verif);
-
-    if ($resultat_verif['id'] == $_SESSION['id'])
-    {
-        if ($_POST['password'] != $_POST['password_conf'])
+        if (!empty($resultat_verif)) 
         {
-            echo "<span class='warning'>/!\ Mot de passe différents /!\\</span>";
-        }
+            $erreur_log = true; 
+        } 
         else 
         {
-            $update_profil = "UPDATE utilisateurs SET login= '$login', password= '$password' WHERE id= '" . $resultat['id'] . "'";
-            $query_profil = mysqli_query($connexion,$update_profil);
-            echo "Vos modifications ont bien été prise en compte !";
+            $update_login = "UPDATE utilisateurs SET login = '$login' WHERE id = '" . $resultat['id'] . "'";
+            $query_login = mysqli_query($connexion, $update_login);
+            $_SESSION['login'] = $login;
+            $modif_log = true;
         }
     }
 
-    elseif (!empty($resultat_verif))
+    if ($password != $resultat['password']) 
     {
-        echo "<span class='warning'>Ce login est déjà prit !</span>";
-    }
-
-    else
-    {
-        $update_profil = "UPDATE utilisateurs SET login= '$login', password= '$password' WHERE id= '" . $resultat['id'] . "'";
-        $query_profil = mysqli_query($connexion,$update_profil);
-        $resultat_profil = mysqli_fetch_assoc($query_verif);
-        // var_dump($resultat_profil);
-        $_SESSION['login'] = $resultat_profil['login'];
-        echo "Vos modifications ont bien été prise en compte !2";
+        if ($password == $password_conf) 
+        {
+            $password = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
+            $update_password = "UPDATE utilisateurs SET password = '$password' WHERE id = '" . $resultat['id'] . "'";
+            $query_password = mysqli_query($connexion, $update_password);
+            $modif_password = true;
+        } 
+        else 
+        {
+            $erreur_password = true;
+        }
     }
 }
 

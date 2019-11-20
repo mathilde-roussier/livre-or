@@ -2,7 +2,8 @@
 
 session_start();
 $connexion = mysqli_connect('localhost', 'root', '', 'livreor');
-$requete = "SELECT * FROM utilisateurs WHERE login = '" . $_SESSION['login'] . "'";
+include "vérifications/verification_profil.php";
+$requete = "SELECT * FROM utilisateurs WHERE login = '".$_SESSION['login']."'";
 $query = mysqli_query($connexion, $requete);
 $resultat = mysqli_fetch_assoc($query);
 
@@ -77,10 +78,10 @@ $resultat = mysqli_fetch_assoc($query);
                     <input type="password" name="password_conf" value=<?php echo $resultat['password']; ?> />
                 </article>
 
-                <input type="submit" name="profil" value="profil" />
+                <input type="submit" name="Modifier" value="Modifier" />
 
-                <?php include 'vérifications/verification_profil.php'; ?>
-
+                <?php include "vérifications/echo_profil.php" ?>
+                
             </form>
 
         </section>
