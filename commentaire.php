@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/livre-or.css">
 </head>
 
-<body class= "body_base">
+<body class="body_base">
 
     <header class="hetf">
         <nav>
@@ -61,19 +61,9 @@
                     <li><a href="commentaire.php">Commentaire</a></li>
                     <li><a href="profil.php">Profil</a></li>
                     <li><a href="livre-or.php">Livre d'or</a></li>
-                    <li>
-                        <form action="index.php" method="post">
-                            <input type="submit" name='deco' value="Deconnexion">
-                        </form>
-                        <?php if (isset($_POST['deco'])) {
-                                session_unset();
-                                session_destroy();
-                                header('Location:index.php');
-                            }
-                            ?>
-                    </li>
 
                 <?php endif; ?>
+
             </ul>
 
             <aside>

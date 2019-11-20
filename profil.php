@@ -1,4 +1,13 @@
-<?php session_start(); ?>
+<?php
+
+session_start();
+$connexion = mysqli_connect('localhost', 'root', '', 'livreor');
+$requete = "SELECT * FROM utilisateurs WHERE login = '" . $_SESSION['login'] . "'";
+$query = mysqli_query($connexion, $requete);
+$resultat = mysqli_fetch_assoc($query);
+
+?>
+
 <!doctype html>
 
 <html lang="fr">
@@ -9,7 +18,7 @@
     <link rel="stylesheet" href="css/livre-or.css">
 </head>
 
-<body class= "body_base">
+<body class="body_base">
 
     <header class="hetf">
         <nav>
@@ -44,7 +53,39 @@
         </nav>
     </header>
 
+    <main>
 
+        <section>
+
+            <p> Profil </p>
+
+
+            <form action="profil.php" method="POST">
+
+                <article>
+                    <label> Login </label>
+                    <input type="text" name="login" value=<?php echo $resultat['login']; ?> />
+                </article>
+
+                <article>
+                    <label> Mot de passe </label>
+                    <input type="password" name="password" value=<?php echo $resultat['password']; ?> />
+                </article>
+
+                <article>
+                    <label> Confirmation de mot de passe </label>
+                    <input type="password" name="password_conf" value=<?php echo $resultat['password']; ?> />
+                </article>
+
+                <input type="submit" name="profil" value="profil" />
+
+                <?php include 'vérifications/verification_profil.php'; ?>
+
+            </form>
+
+        </section>
+
+    </main>
 
     <footer class="hetf">
         <nav>
@@ -61,19 +102,9 @@
                     <li><a href="commentaire.php">Commentaire</a></li>
                     <li><a href="profil.php">Profil</a></li>
                     <li><a href="livre-or.php">Livre d'or</a></li>
-                    <li>
-                        <form action="index.php" method="post">
-                            <input type="submit" name='deco' value="Deconnexion">
-                        </form>
-                        <?php if (isset($_POST['deco'])) {
-                                session_unset();
-                                session_destroy();
-                                header('Location:index.php');
-                            }
-                            ?>
-                    </li>
 
                 <?php endif; ?>
+
             </ul>
 
             <aside>

@@ -48,6 +48,9 @@
 
         <section>
 
+            <p> Connexion </p>
+
+
             <form action="connexion.php" method="POST">
 
                 <article>
@@ -62,7 +65,7 @@
 
                 <input type="submit" name="connexion" value="connexion" />
 
-                <?php include 'verification.php' ?>
+                <?php include 'vérifications/verification_connexion.php' ?>
 
             </form>
 
@@ -85,19 +88,9 @@
                     <li><a href="commentaire.php">Commentaire</a></li>
                     <li><a href="profil.php">Profil</a></li>
                     <li><a href="livre-or.php">Livre d'or</a></li>
-                    <li>
-                        <form action="index.php" method="post">
-                            <input type="submit" name='deco' value="Deconnexion">
-                        </form>
-                        <?php if (isset($_POST['deco'])) {
-                                session_unset();
-                                session_destroy();
-                                header('Location:index.php');
-                            }
-                            ?>
-                    </li>
 
                 <?php endif; ?>
+
             </ul>
 
             <aside>

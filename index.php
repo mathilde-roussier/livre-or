@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); ?>
 <!doctype html>
 
 <html lang="fr">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/livre-or.css">
 </head>
 
-<body class= "body_base">
+<body class="body_base">
 
     <header class="hetf">
         <nav>
@@ -75,7 +75,7 @@
                     <li><a href="commentaire.php">Commentaire</a></li>
                     <li><a href="profil.php">Profil</a></li>
                     <li><a href="livre-or.php">Livre d'or</a></li>
-        
+
                 <?php endif; ?>
 
             </ul>
