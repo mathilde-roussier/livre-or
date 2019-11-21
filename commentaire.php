@@ -47,7 +47,7 @@
 
         <section >
 
-            <p id="titre"> Espace commentaire </p>
+            <h1 id="titre"> Espace commentaire </h1>
 
             <form action="commentaire.php" method="POST">
 

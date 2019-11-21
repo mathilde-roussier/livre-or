@@ -4,7 +4,7 @@
 
 if (isset($_POST['validation']))
 {
-    $commentaire = $_POST['commentaire'];
+    $commentaire = addslashes($_POST['commentaire']);
     $utilisateur = $_SESSION['id'];
     $connexion = mysqli_connect('localhost','root','','livreor');
     $insert_comment= "INSERT INTO commentaires (commentaire,id_utilisateur, date) VALUES ('$commentaire', '$utilisateur',NOW())";

@@ -45,9 +45,9 @@
 
     <main>
 
-        <section >
+        <section>
 
-            <p id="titre"> Inscription </p>
+            <h1 id="titre"> Inscription </h1>
 
             <form action="inscription.php" method="POST">
 
@@ -66,7 +66,7 @@
                     <input type="password" name="password_conf" required />
                 </article>
 
-                <input type="submit" name="inscription" value="inscription" />
+                <input type="submit" name="inscription" value="Inscription" />
 
                 <?php include 'vérifications/verification_inscription.php' ?>
 

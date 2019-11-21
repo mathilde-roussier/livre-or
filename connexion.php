@@ -47,7 +47,7 @@
 
         <section>
 
-            <p id="titre"> Connexion </p>
+            <h1 id="titre"> Connexion </h1>
 
 
             <form action="connexion.php" method="POST">
@@ -62,7 +62,7 @@
                     <input type="password" name="password" required />
                 </article>
 
-                <input type="submit" name="connexion" value="connexion" />
+                <input type="submit" name="connexion" value="Connexion" />
 
                 <?php include 'vérifications/verification_connexion.php' ?>
 

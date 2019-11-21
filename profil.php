@@ -59,7 +59,7 @@ mysqli_close($connexion);
 
         <section >
 
-            <p id="titre"> Profil </p>
+            <h1 id="titre"> Profil </h1>
 
 
             <form action="profil.php" method="POST">
