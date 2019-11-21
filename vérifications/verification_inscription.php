@@ -24,6 +24,7 @@ if (isset($_POST['inscription'])) {
         $query_inscri = mysqli_query($connexion,$insert_inscri);
         header('Location:connexion.php');
     }
+    mysqli_close($connexion);
 
 }
 

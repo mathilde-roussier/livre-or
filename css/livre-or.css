@@ -1,4 +1,6 @@
-.body_base {
+@import url('https://fonts.googleapis.com/css?family=Merienda+One&display=swap');
+
+body {
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -7,22 +9,16 @@
     background-image: url('../img/Accueil.jpg');
     background-size: cover;
     background-attachment: fixed;
+    font-size: 22pt;
 }
 
-.body_livre {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
+#body_livre {
     background-image: url('../img/livre.jpg');
-    background-size: cover;
     background-position: 25% 50%;
-    background-attachment: fixed;
 }
 
 .hetf {
-    background-color: rgba(236, 196, 162, 0.7);
+    background-color: #ecc4a2b3;
     font-size: 16pt;
 }
 
@@ -47,10 +43,84 @@ a:hover {
     text-shadow: 1px 2px 2px rgb(122, 76, 43);
 }
 
-main {
+#titre {
     display: flex;
     justify-content: center;
-    flex-grow:1;
+    background-color: rgba(236, 196, 162, 0.7);
+    border-radius: 30px 30px 30px 30px;
+    backdrop-filter: blur(2px);
+    width: 30%;
+}
+
+#accueil{
+    background-color: rgba(236, 196, 162, 0.7);
+    border-radius: 30px 30px 30px 30px;
+    border-color: rgba(236, 196, 162);
+    backdrop-filter: blur(2px);
+    flex-grow: 0.1;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+}
+
+#main_comment {
+    flex-direction: row;
+}
+
+#main_comment figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 0.1;
+}
+
+figcaption {
+    font-size: 20pt;
+    color: rgb(122, 76, 43);
+    font-weight: bold;
+}
+
+.commentaire {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-grow: 0.9;
+}
+
+#noconnect{
+    justify-content: center;
+}
+
+#noconnect article{
+    margin-left: 0;
+    margin-right: 210px;
+    margin-top: 150px;
+}
+
+.commentaire article {
+    display: flex;
+    width: 880px;
+    position: sticky;
+    overflow: auto;
+    flex-direction: column;
+    height: 520px;
+    margin-left: 10px;
+    margin-top: 150px;
+    font-family: 'Merienda One', cursive;
+    font-size:12pt;
+}
+
+.commentaire p {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    align-self: center;
+    flex-grow: 0.5;
 }
 
 section {
@@ -58,32 +128,32 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 22pt;
-    flex-grow:1;
+    flex-grow: 0.8;
+    width: 50%;
 }
 
 section form {
     display: flex;
     flex-direction: column;
-    align-items:center;
-    flex-grow:0.7;
-    width:50%;
+    align-items: center;
+    flex-grow: 0.5;
+    width: 50%;
     justify-content: space-around;
-    background-color:rgba(236, 196, 162, 0.7);
-    border-radius:30px 30px 30px 30px;
-    border-color:rgba(236, 196, 162);
+    background-color: rgba(236, 196, 162, 0.7);
+    border-radius: 30px 30px 30px 30px;
+    border-color: rgba(236, 196, 162);
     backdrop-filter: blur(2px);
 }
 
-form article{
-    display:flex;
+form article {
+    display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
 }
 
-.warning{
-    color:red;
-    font-weight:bold;
+.warning {
+    color: red;
+    font-weight: bold;
 }
 
 footer nav {
@@ -98,7 +168,7 @@ footer aside {
     font-weight: bold;
 }
 
-nav input[type=submit] { 
+nav input[type=submit] {
     border: none;
     background: transparent;
     font-size: 15pt;
@@ -109,5 +179,3 @@ nav input[type=submit] {
     text-decoration: underline;
     outline: none;
 }
- 
-     

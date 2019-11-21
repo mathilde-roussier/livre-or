@@ -24,7 +24,6 @@
 
                 <?php else : ?>
 
-                    <li><a href="commentaire.php">Commentaire</a></li>
                     <li><a href="profil.php">Profil</a></li>
                     <li><a href="livre-or.php">Livre d'or</a></li>
                     <li>
@@ -44,7 +43,28 @@
         </nav>
     </header>
 
+    <main>
 
+        <section >
+
+            <p id="titre"> Espace commentaire </p>
+
+            <form action="commentaire.php" method="POST">
+
+                <article>
+                    <label> Commentaire </label>
+                    <textarea name="commentaire" placeholder="Ecrivez votre commentaire.."></textarea>
+                </article>
+
+                <input type="submit" name="validation" value="Valider" />
+
+                <?php include 'vérifications/verification_commentaire.php' ?>
+
+            </form>
+
+        </section>
+
+    </main>
 
     <footer class="hetf">
         <nav>
@@ -58,7 +78,6 @@
 
                 <?php else : ?>
 
-                    <li><a href="commentaire.php">Commentaire</a></li>
                     <li><a href="profil.php">Profil</a></li>
                     <li><a href="livre-or.php">Livre d'or</a></li>
 

@@ -24,7 +24,6 @@
 
                 <?php else : ?>
 
-                    <li><a href="commentaire.php">Commentaire</a></li>
                     <li><a href="profil.php">Profil</a></li>
                     <li><a href="livre-or.php">Livre d'or</a></li>
                     <li>
@@ -46,9 +45,9 @@
 
     <main>
 
-        <section>
+        <section >
 
-            <p> Inscription </p>
+            <p id="titre"> Inscription </p>
 
             <form action="inscription.php" method="POST">
 
@@ -89,7 +88,6 @@
 
                 <?php else : ?>
 
-                    <li><a href="commentaire.php">Commentaire</a></li>
                     <li><a href="profil.php">Profil</a></li>
                     <li><a href="livre-or.php">Livre d'or</a></li>
 

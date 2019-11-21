@@ -24,7 +24,6 @@
 
                 <?php else : ?>
 
-                    <li><a href="commentaire.php">Commentaire</a></li>
                     <li><a href="profil.php">Profil</a></li>
                     <li><a href="livre-or.php">Livre d'or</a></li>
                     <li>
@@ -46,7 +45,7 @@
 
     <main>
 
-        <section>
+        <section id="accueil">
 
             <?php if (isset($_SESSION['login'])) : ?>
                 <h1> Bienvenue <?php echo $_SESSION['login'] ?>,</h1>
@@ -72,7 +71,6 @@
 
                 <?php else : ?>
 
-                    <li><a href="commentaire.php">Commentaire</a></li>
                     <li><a href="profil.php">Profil</a></li>
                     <li><a href="livre-or.php">Livre d'or</a></li>
 

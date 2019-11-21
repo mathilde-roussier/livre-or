@@ -29,6 +29,7 @@ if (isset($_POST['connexion']))
         {
             echo "<span class='warning'>/!\ Votre nom d'utilisateur n'existe pas /!\\</span>"; 
         }
+        mysqli_close($connexion);
     }
 }
 

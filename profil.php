@@ -7,6 +7,8 @@ $requete = "SELECT * FROM utilisateurs WHERE login = '".$_SESSION['login']."'";
 $query = mysqli_query($connexion, $requete);
 $resultat = mysqli_fetch_assoc($query);
 
+mysqli_close($connexion);
+
 ?>
 
 <!doctype html>
@@ -34,7 +36,6 @@ $resultat = mysqli_fetch_assoc($query);
 
                 <?php else : ?>
 
-                    <li><a href="commentaire.php">Commentaire</a></li>
                     <li><a href="profil.php">Profil</a></li>
                     <li><a href="livre-or.php">Livre d'or</a></li>
                     <li>
@@ -56,9 +57,9 @@ $resultat = mysqli_fetch_assoc($query);
 
     <main>
 
-        <section>
+        <section >
 
-            <p> Profil </p>
+            <p id="titre"> Profil </p>
 
 
             <form action="profil.php" method="POST">
@@ -80,7 +81,10 @@ $resultat = mysqli_fetch_assoc($query);
 
                 <input type="submit" name="Modifier" value="Modifier" />
 
-                <?php include "vérifications/echo_profil.php" ?>
+                <?php
+                 include "vérifications/echo_profil.php" 
+                
+                ?>
                 
             </form>
 
@@ -100,7 +104,6 @@ $resultat = mysqli_fetch_assoc($query);
 
                 <?php else : ?>
 
-                    <li><a href="commentaire.php">Commentaire</a></li>
                     <li><a href="profil.php">Profil</a></li>
                     <li><a href="livre-or.php">Livre d'or</a></li>
 

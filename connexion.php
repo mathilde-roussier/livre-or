@@ -24,7 +24,6 @@
 
                 <?php else : ?>
 
-                    <li><a href="commentaire.php">Commentaire</a></li>
                     <li><a href="profil.php">Profil</a></li>
                     <li><a href="livre-or.php">Livre d'or</a></li>
                     <li>
@@ -48,7 +47,7 @@
 
         <section>
 
-            <p> Connexion </p>
+            <p id="titre"> Connexion </p>
 
 
             <form action="connexion.php" method="POST">
@@ -85,7 +84,6 @@
 
                 <?php else : ?>
 
-                    <li><a href="commentaire.php">Commentaire</a></li>
                     <li><a href="profil.php">Profil</a></li>
                     <li><a href="livre-or.php">Livre d'or</a></li>
 
