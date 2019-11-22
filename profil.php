@@ -48,13 +48,18 @@ mysqli_close($connexion);
                 </article>
 
                 <article>
-                    <label> Mot de passe </label>
-                    <input type="password" name="password" value=<?php echo $resultat['password']; ?> />
+                    <label> Mot de passe actuel </label>
+                    <input type="password" name="old_password" required/>
                 </article>
 
                 <article>
-                    <label> Confirmation de mot de passe </label>
-                    <input type="password" name="password_conf" value=<?php echo $resultat['password']; ?> />
+                    <label> Nouveau mot de passe </label>
+                    <input type="password" name="password" />
+                </article>
+
+                <article>
+                    <label> Confirmation du nouveau mot de passe </label>
+                    <input type="password" name="password_conf" />
                 </article>
 
                 <input type="submit" name="Modifier" value="Modifier" />
