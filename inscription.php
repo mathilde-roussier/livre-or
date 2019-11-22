@@ -1,4 +1,7 @@
-<?php session_start(); ?>
+<?php session_start();
+if (!isset($_SESSION['login'])) { } else {
+    header('Location:index.php');
+} ?>
 <!doctype html>
 
 <html lang="fr">
@@ -9,9 +12,9 @@
     <link rel="stylesheet" href="css/livre-or.css">
 </head>
 
-<body class="body_base">
+<body id="body_form">
 
-<header class="hetf">
+    <header class="hetf">
         <nav>
             <ul>
                 <li><a href="index.php"><img src='img/logo-accueil.png'></a></li>
@@ -21,9 +24,13 @@
         </nav>
     </header>
 
-    <main>
+    <main id='main_form'>
 
-        <section>
+        <aside>
+            <img src='img/inscription.png'>
+        </aside>
+
+        <section id='form'>
 
             <h1 id="titre"> Inscription </h1>
 

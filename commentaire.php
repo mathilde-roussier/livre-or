@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/livre-or.css">
 </head>
 
-<body class="body_base">
+<body id="body_form">
 
     <header class="hetf">
         <nav>
@@ -21,9 +21,13 @@
         </nav>
     </header>
 
-    <main>
+    <main id='main_form'>
 
-        <section>
+    <aside>
+            <img src='img/commentaire.png'>
+        </aside>
+
+        <section id='form'>
 
             <h1 id="titre"> Espace commentaire </h1>
 

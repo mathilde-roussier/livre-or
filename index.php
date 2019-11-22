@@ -9,36 +9,14 @@
     <link rel="stylesheet" href="css/livre-or.css">
 </head>
 
-<body class="body_base">
+<body>
 
     <header class="hetf">
         <nav>
             <ul>
                 <li><a href="index.php"><img src='img/logo-accueil.png'></a></li>
 
-                <?php if (!isset($_SESSION['login'])) : ?>
-
-                    <li><a href="inscription.php">Inscription</a></li>
-                    <li><a href="livre-or.php">Livre d'or</a></li>
-                    <li><a href="connexion.php">Connexion</a></li>
-
-                <?php else : ?>
-
-                    <li><a href="profil.php">Profil</a></li>
-                    <li><a href="livre-or.php">Livre d'or</a></li>
-                    <li>
-                        <form action="index.php" method="post">
-                            <input type="submit" name='deco' value="Deconnexion">
-                        </form>
-                        <?php if (isset($_POST['deco'])) {
-                                session_unset();
-                                session_destroy();
-                                header('Location:index.php');
-                            }
-                            ?>
-                    </li>
-
-                <?php endif; ?>
+                <?php include "header.php" ?>
             </ul>
         </nav>
     </header>
@@ -48,11 +26,19 @@
         <section id="accueil">
 
             <?php if (isset($_SESSION['login'])) : ?>
+
                 <h1> Bienvenue <?php echo $_SESSION['login'] ?>,</h1>
-                <p>vous vous trouvez sur le livre d'or de Mathilde !</p>
+                <aside><img src='img/livre_accueil.png'></aside>
+                <p id='p1'>Vous vous trouvez </p>
+                <p id='p2'>sur mon livre d'or !</p>
+
             <?php else : ?>
+
                 <h1> Bienvenue, </h1>
-                <p>Vous vous trouvez sur le livre d'or de Mathilde !</p>
+                <aside><img src='img/livre_accueil.png'></aside>
+                <p id='p1'>Vous vous trouvez </p>
+                <p id='p2'>sur mon livre d'or !</p>
+                
             <?php endif; ?>
 
         </section>
@@ -62,19 +48,7 @@
     <footer class="hetf">
         <nav>
             <ul>
-
-                <?php if (!isset($_SESSION['login'])) : ?>
-
-                    <li><a href="inscription.php">Inscription</a></li>
-                    <li><a href="livre-or.php">Livre d'or</a></li>
-                    <li><a href="connexion.php">Connexion</a></li>
-
-                <?php else : ?>
-
-                    <li><a href="profil.php">Profil</a></li>
-                    <li><a href="livre-or.php">Livre d'or</a></li>
-
-                <?php endif; ?>
+                <?php include "footer.php" ?>
 
             </ul>
 

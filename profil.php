@@ -1,9 +1,12 @@
 <?php
 
 session_start();
+if (isset($_SESSION['login'])) { } else {
+    header('Location:index.php');
+}
 $connexion = mysqli_connect('localhost', 'root', '', 'livreor');
 include "vérifications/verification_profil.php";
-$requete = "SELECT * FROM utilisateurs WHERE login = '".$_SESSION['login']."'";
+$requete = "SELECT * FROM utilisateurs WHERE login = '" . $_SESSION['login'] . "'";
 $query = mysqli_query($connexion, $requete);
 $resultat = mysqli_fetch_assoc($query);
 
@@ -21,9 +24,9 @@ mysqli_close($connexion);
     <link rel="stylesheet" href="css/livre-or.css">
 </head>
 
-<body class="body_base">
+<body id="body_form">
 
-<header class="hetf">
+    <header class="hetf">
         <nav>
             <ul>
                 <li><a href="index.php"><img src='img/logo-accueil.png'></a></li>
@@ -33,9 +36,13 @@ mysqli_close($connexion);
         </nav>
     </header>
 
-    <main>
+    <main id='main_form'>
 
-        <section >
+        <aside>
+            <figure><img src='img/profil.png'></figure>
+        </aside>
+
+        <section id='form'>
 
             <h1 id="titre"> Profil </h1>
 
@@ -49,7 +56,7 @@ mysqli_close($connexion);
 
                 <article>
                     <label> Mot de passe actuel </label>
-                    <input type="password" name="old_password" required/>
+                    <input type="password" name="old_password" required />
                 </article>
 
                 <article>
@@ -65,10 +72,10 @@ mysqli_close($connexion);
                 <input type="submit" name="Modifier" value="Modifier" />
 
                 <?php
-                 include "vérifications/echo_profil.php" 
-                
+                include "vérifications/echo_profil.php"
+
                 ?>
-                
+
             </form>
 
         </section>
