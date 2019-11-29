@@ -3,7 +3,7 @@
 <?php
 
 $connexion = mysqli_connect("localhost", "root", "", "livreor");
-$requete = "SELECT commentaire,date,login FROM commentaires JOIN utilisateurs ON commentaires.id_utilisateur = utilisateurs.id ORDER BY date DESC";
+$requete = "SELECT commentaire,date,login FROM commentaires JOIN utilisateurs ON commentaires.id_utilisateur = utilisateurs.id ORDER BY date ASC";
 $query = mysqli_query($connexion, $requete);
 $resultat = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
